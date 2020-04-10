@@ -2,21 +2,21 @@ package com.example.myapplication15;
 
 import android.os.Bundle;
 import android.view.Menu;
+import android.widget.Toolbar;
 
-import com.google.android.material.bottomnavigation.BottomNavigationView;
-
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.toolbar_main,menu);
+        getMenuInflater().inflate(R.menu.action_main,menu);
         return true;
     }
 
@@ -41,8 +41,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ActionBar abar = getSupportActionBar();
-        abar.setDisplayShowTitleEnabled(false);
+        Toolbar tb = (Toolbar)findViewById(R.id.app_toolbar);
+        setSupportActionBar(tb);
 
         BottomNavigationView navView = findViewById(R.id.nav_view);
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
